@@ -1,0 +1,138 @@
+@import "../constant";
+header {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    &,
+    &:focus,
+    &:active,
+    &:target {
+      box-shadow: none !important;
+    }
+    border: none;
+    i {
+      color: $primary-color-light;
+      font-size: 1.2rem;
+    }
+  }
+  .right-header {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    li {
+      display: inline-block;
+
+      + li {
+        margin-left: 25px;
+      }
+    }
+  }
+
+  .profile {
+    position: relative;
+    .avatar {
+      width: 40px;
+      border-radius: 1000px;
+      border: 1px solid rgb(235, 235, 235);
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+      cursor: pointer;
+      i {
+        color: $primary-color-light;
+      }
+    }
+    .profile-menu {
+        transition: none;
+      min-width: 190px;
+      max-width: 280px;
+      right: 0;
+      position: absolute;
+      top: 55px;
+      background-color: #fff;
+      display: block;
+      padding: 12px 0;
+      box-shadow: 1px 1px 10px 3px #d5d5d538;
+      z-index: 6;
+      li {
+        font-family: "Nunito", sans-serif;
+        line-height: 30px;
+        margin: 0;
+        display: block;
+        color: $secondary-color;
+        padding: 0 20px;
+        &.profile-name {
+          border-bottom: 2px solid $primary-color-light;
+          padding-top: 2px;
+          padding-bottom: 5px;
+          + li {
+            padding-top: 15px;
+          }
+        }
+        &.profile-name span {
+          color: $primary-color;
+          font-weight: 700;
+          font-size: 1.1rem;
+          font-family: inherit;
+        }
+        a {
+          cursor: pointer;
+          width: 100%;
+          display: inline-block;
+          font-family: inherit;
+        }
+        .profile-icon {
+          margin-right: 5px;
+        }
+        &:not(.profile-name) {
+          + li {
+            margin-top: 5px;
+          }
+          & * {
+            transition: none;
+          }
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin styleHeader {
+    position: fixed;
+    width: calc(100% - $sidebar-width - 5px - 30px - 5px);
+    transform: translateX(5px);
+}
+
+.header-container {
+  padding-top: 30px;
+  header {
+    transition: all 0.3s;
+  }
+  &.scroll {
+    height: 90px;
+    background-color: $bg-primary;
+    &::before{
+        @include styleHeader();
+        content: " ";
+        z-index: 49;
+        height: 95px;
+        top: 0;
+        background-color: $bg-primary;
+      }
+    header {
+        top: 25px;
+        z-index: 50;
+        border-radius: 56px;
+        padding: 0 15px;
+        background-color: #fff;
+        @include styleHeader();
+    }
+  }
+}

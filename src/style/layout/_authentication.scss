@@ -1,0 +1,71 @@
+@import "../constant";
+
+.login-form {
+    width: 590px;
+    background-color: #fff;
+    padding: 48px;
+
+    .logo-name{
+        display: inline;
+        font-weight: 700;
+        font-size: 2rem;
+        margin-left: 10px;
+        vertical-align: middle;
+        color: $logo-name;
+    }
+
+    @media screen and (max-width: 960px) {
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+    }
+}
+
+.login-form .title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 32px;
+    color: $primary-color;
+}
+
+.login-form .desc {
+    font-size: 0.9rem;
+    color: $secondary-color;
+    font-weight: 400;
+}
+
+.login-form .form-control {
+    height: 52px;
+    box-shadow: none;
+}
+.login-form input, .login-form input::placeholder, .login-form input:focus{
+    color: $secondary-color;
+}
+
+.login-form .form-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: rgb(43, 42, 42);
+}
+
+.login-form .btn {
+    margin-top: 18px;
+    height: 52px;
+    width: 100%;
+    font-weight: 600;
+    background-color: $primary-color-light;
+    color: #fff;
+    &:hover{
+        background-color: $primary-color;
+    }
+}
+
+.login-form .alert {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
